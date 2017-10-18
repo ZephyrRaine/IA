@@ -8,6 +8,7 @@
 
 #include <vector>
 #include "Core\Math.h"
+#include "json/json.h"
 
 namespace crea
 {
@@ -40,6 +41,8 @@ namespace crea
 		VectorTerrain m_Terrains;
 
 		TileSet();
+
+		bool ParseJson(Json::Value _jsonTileset);
 
 		~TileSet();
 		

@@ -42,7 +42,6 @@ namespace crea
 
 		// Parse file
 		mapStream >> root;
-
 		int version = root.get("version", 0).asInt();
 		if (version != 1)
 		{
@@ -57,10 +56,45 @@ namespace crea
 
 		m_nTileWidth = root.get("tilewidth", 10).asInt();
 		m_nTileHeight = root.get("tileheight", 10).asInt();
-		
+		Json::Value mainTileset = root.get("tilesets", 0)[0];
+
+		m_pTerrainTileSet = new TileSet();
+		m_pTerrainTileSet->ParseJson(mainTileset);
+
+		//Load sprite
+		Sprite* spriteTileset = new Sprite();
+		spriteTileset->setTexture(m_pGM->getTexture(mainTileset.get("image", 0).asString()));
+		m_pTerrainTileSet->m_pSprite = spriteTileset;
+
+		//Parse terrains
+		Json::Value jsonTerrain = mainTileset.get("terrains", 0);
+
+		m_pTerrainTileSet->m_Terrains = VectorTerrain();
+
+		Json::ValueIterator itTerrain = jsonTerrain.begin();
+		while (itTerrain != jsonTerrain.end()) 
+		{
+			Terrain* t = new Terrain();
+			t->m_szName = itTerrain->get("name", 0).asString();
+			t->m_nTile = (short)itTerrain->get("tile", 0).asInt();
+			m_pTerrainTileSet->m_Terrains.push_back(t);
+			itTerrain++;
+		}
+
+		Json::Value layer = root.get("layers", 0)[0].get("data", 0);
+		Json::ValueIterator itTile = layer.begin();
+			int idx = 0;
+		while (itTile != layer.end())
+		{
+			int x = idx % m_nHeight;
+			int y = (idx - idx % m_nHeight) / m_nHeight;
+			idx++;
+			m_Grid[x][y]->setTileTerrainId((short)itTile->asInt());
+			itTile++;
+		}
 		// To be completed...
 		// Load Layers
-		// Load Tilesets
+		// Load Tileset
 		// Load Terrains
 
 		return true;

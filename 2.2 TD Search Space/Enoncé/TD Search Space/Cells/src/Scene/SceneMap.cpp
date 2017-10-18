@@ -22,7 +22,7 @@ bool SceneMap::onInit()
 	// Load Map
 	m_pEntity3 = m_pGM->getEntity("map1");
 	m_pGM->addEntity(m_pEntity3);
-	m_pMap = m_pGM->getMap("map1.json"); // map loaded after entity added to display map first (order in tree matters)
+	m_pMap = m_pGM->getMap("map2.json"); // map loaded after entity added to display map first (order in tree matters)
 	m_pMapRenderer = m_pGM->getMapRenderer("MapRenderer1");
 	m_pMapRenderer->setMap(m_pMap);
 	m_pEntity3->addComponent(m_pMapRenderer);
@@ -48,6 +48,7 @@ bool SceneMap::onUpdate()
 
 bool SceneMap::onDraw()
 {
+	m_pMap->draw();
 	return true;
 }
 
