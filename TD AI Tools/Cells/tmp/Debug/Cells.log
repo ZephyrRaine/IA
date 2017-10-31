@@ -1,0 +1,8 @@
+﻿  AITools.cpp
+c:\users\etudiant1\desktop\cours\cleduc\ia\td ai tools\cells\src\scene\aitools.cpp(45): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\etudiant1\desktop\cours\cleduc\ia\td ai tools\cells\src\scene\aitools.cpp(49): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant1\desktop\cours\cleduc\ia\td ai tools\cells\src\scene\aitools.cpp(82): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\users\etudiant1\desktop\cours\cleduc\ia\td ai tools\cells\src\scene\aitools.cpp(85): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant1\desktop\cours\cleduc\ia\td ai tools\cells\src\scene\aitools.cpp(145): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Cells.vcxproj -> C:\Users\Etudiant1\Desktop\Cours\cleduc\IA\TD AI Tools\Cells\src\..\bin\Cells-d.exe
+  Cells.vcxproj -> C:\Users\Etudiant1\Desktop\Cours\cleduc\IA\TD AI Tools\Cells\src\..\bin\Cells-d.pdb (Partial PDB)
