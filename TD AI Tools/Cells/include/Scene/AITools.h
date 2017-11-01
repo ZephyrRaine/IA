@@ -19,13 +19,21 @@ class AITools
 	RectangleShape* m_pSelectionRect;
 	ShapeRenderer* m_pRectRenderer;
 	TextRenderer* m_pTextRenderer;
+	Sprite* m_pSpriteCommands;
+	string m_tStringCommands[10];
 	Text* m_pDiagText;
 	short m_mapWidth;
 	short m_mapHeight;
 	short m_tileWidth;
 	short m_tileHeight;
-
+	
+	string m_szLastCommand;
 	int measurement;
+
+
+	int m_iButtonWidth;
+	int m_iButtonHeight;
+	int m_iNbButtons;
 	// Command
 
 	// Diagnostics

@@ -14,7 +14,7 @@
     <ProjectGuid>{17A072FE-6C74-4F75-9010-2F0E4819916E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TDDP</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
