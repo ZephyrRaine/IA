@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Cells.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Scene\SceneMap.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneMenu.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneGame.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AITools.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\CharacterController.cpp">
+      <Filter>src\Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\UserController.cpp">
+      <Filter>src\Scripts</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Scene\SceneMap.h">
+      <Filter>include\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scene\SceneMenu.h">
+      <Filter>include\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scene\SceneGame.h">
+      <Filter>include\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stdafx.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\targetver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scene\AITools.h">
+      <Filter>include\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scripts\CellsScriptFactory.h">
+      <Filter>include\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scripts\CharacterController.h">
+      <Filter>include\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Scripts\UserController.h">
+      <Filter>include\Script</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{71f0c394-d80f-4112-aae3-b06094f56195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Scene">
+      <UniqueIdentifier>{f13e31f0-af32-4f8c-99ce-e6616aa05ace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{1627e05b-86e5-4cc0-b88c-f5a8392fff4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scene">
+      <UniqueIdentifier>{aea6b33e-1421-423b-ae6d-465b76fc40e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Script">
+      <UniqueIdentifier>{a1db5322-80b5-4384-a17f-84cfc4d87354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scripts">
+      <UniqueIdentifier>{3f1c525b-8b20-408e-a0b9-c3b1f7b8a9c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
