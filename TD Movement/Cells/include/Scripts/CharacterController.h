@@ -9,6 +9,7 @@
 #include "Core\Script.h"
 #include "Core\Math.h"
 #include "Core\GameManager.h"
+#include "Scripts\UserController.h"
 
 namespace crea
 {
@@ -46,17 +47,24 @@ namespace crea
 	// Predefinitions
 	class GameManager;
 	class Map;
+	class UserController;
 
 	class CharacterController : public Script
 	{
 		GameManager* m_pGM;
-
+		UserController* m_pUC;
 		Vector2f m_vMotion;
 	
 	public:
+
+		// Animation
+		Animator* m_pAnimator;
+		ActionTable* m_pActionTable;
+
+		// Animation
 		CharacterController();
 		virtual ~CharacterController();
-
+		
 		void move(Vector2f _vMotion);
 		
 		virtual bool init();

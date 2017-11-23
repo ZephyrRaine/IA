@@ -18,11 +18,11 @@ namespace crea
 		{ 
 			if (_szName == "CharacterController")
 			{
-				return new CharacterController;
+				return new CharacterController();
 			}
 			else if (_szName == "UserController")
 			{
-				return new UserController;
+				return new UserController();
 			}
 			return nullptr;
 		}

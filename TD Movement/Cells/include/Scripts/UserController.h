@@ -8,10 +8,14 @@
 
 #include "Core\Script.h"
 #include "Core\Math.h"
+#include "Scripts\CharacterController.h"
 
 namespace crea
 {
 	class CharacterController;
+	enum EnumCharacterDirection;
+	enum EnumAnimCondition;
+	enum EnumAction;
 
 	class UserController : public Script
 	{
@@ -21,10 +25,15 @@ namespace crea
 		Vector2f m_Direction;
 
 	public:
+		EnumCharacterDirection m_charDirection;
+		EnumAnimCondition m_condition;
+		EnumAction m_action;
+
 		UserController();
 		virtual ~UserController();
 
-		inline void setCharacterController(CharacterController* _pCharacterController);
+		Vector2f GetAngleFromCharDirection(EnumCharacterDirection _charDir);
+		void setCharacterController(CharacterController* _pCharacterController);
 
 		virtual bool init();
 		virtual bool update();

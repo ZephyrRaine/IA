@@ -265,6 +265,8 @@ namespace crea
 				string szName = component["name"].asString();
 				Script* pScript = pGM->getScript(szName);
 				addComponent(pScript);
+				//I don't know why mais :
+				pScript->init();
 			}
 
 			// TD Movement (add Script component)

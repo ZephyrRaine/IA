@@ -3,6 +3,7 @@
 #include "Scene\SceneMap.h"
 #include "Scene\SceneMenu.h"
 #include "Scene\SceneGame.h"
+#include "Scripts\CellsScriptFactory.h"
 
 
 SceneMap::SceneMap()
@@ -22,6 +23,10 @@ SceneMap::~SceneMap()
 bool SceneMap::onInit()
 {
 	m_pGM = GameManager::getSingleton();
+	CellsScriptFactory* pCSF = new CellsScriptFactory();
+	m_pGM->setScriptFactory(pCSF);
+	EntityManager::getSingleton()->setScriptFactory(pCSF);
+
 
 	// Load Map
 	m_pEntity3 = m_pGM->getEntity("map0");
@@ -38,11 +43,8 @@ bool SceneMap::onInit()
 	}
 
 	// Animations
-	m_pAnimator = m_pGM->getAnimator("Peon/Peon.animator");
-	m_pActionTable = m_pGM->getActionTable("Peon/Peon.act");
-	m_direction = kADir_Down;
-	m_condition = kACond_Default;
-	m_action = kAct_Default;
+//	m_pAnimator = m_pGM->getAnimator("Peon/Peon.animator");
+//	m_pActionTable = m_pGM->getActionTable("Peon/Peon.act");
 
 	return true;
 }
@@ -111,7 +113,7 @@ bool SceneMap::onUpdate()
 	}
 	*/
 	
-	if (m_pGM->isKeyPressed(Key::Up))
+	/*if (m_pGM->isKeyPressed(Key::Up))
 	{
 		if (m_pGM->isKeyPressed(Key::Right))
 		{
@@ -148,11 +150,12 @@ bool SceneMap::onUpdate()
 	else if (m_pGM->isKeyPressed(Key::Left))
 	{
 		m_direction = kADir_Left;
-	}
-	string* pAnimationName = m_pActionTable->getAnimation(m_direction, m_condition, m_action);
-	Animation* pAnimation = m_pGM->getAnimation(*pAnimationName);
-	m_pAnimator->play(*pAnimation);
-	
+	}*/
+
+
+
+	///KEEEP
+
 	return true;
 }
 

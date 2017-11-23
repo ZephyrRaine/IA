@@ -4,6 +4,7 @@
 #include "Scene\SceneMenu.h"
 #include "Scene\SceneMap.h"
 #include "Core\SceneManager.h"
+#include "Scripts\UserController.h"
 #include <string>
 
 AITools::AITools()
@@ -183,76 +184,80 @@ bool AITools::onUpdate()
 			// Restart the command display timer
 			m_CommandDisplayClock.restart();
 
+			// Animation
+			//Animator* m_pAnimator = m_pGM->getAnimator("Peon/Peon.animator");
+			//ActionTable* m_pActionTable = m_pGM->getActionTable("Peon/Peon.act");
+			
 			// Do the command
 			ListEntity* pSelectedEntities = m_pGM->getSelectedEntities();
 			for (ListEntity::iterator i = pSelectedEntities->begin(); i != pSelectedEntities->end(); ++i)
 			{
 				Entity* pEntity = (Entity*)*i;
-
+				UserController* pUserControl  = pEntity->getComponent<UserController>();
 				if (m_eCommandType == Command_Reset)
 				{
 					m_pTextCommand->setString("Reset");
-					((SceneMap*)m_pScene)->m_action = kAct_Default;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Default;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Kill)
 				{
 					m_pTextCommand->setString("Kill");
-					((SceneMap*)m_pScene)->m_action = kAct_Chop;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Chop;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Stop)
 				{
 					m_pTextCommand->setString("Stop");
-					((SceneMap*)m_pScene)->m_action = kAct_Idle;
-					//((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Idle;
+					//pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_GoToHQ)
 				{
 					m_pTextCommand->setString("GoToWithGold");
-					((SceneMap*)m_pScene)->m_action = kAct_Walk;
-					((SceneMap*)m_pScene)->m_condition = kACond_Gold;
+					pUserControl->m_action = kAct_Walk;
+					pUserControl->m_condition = kACond_Gold;
 				}
 				else if (m_eCommandType == Command_GoTo)
 				{
 					m_pTextCommand->setString("GoTo");
-					((SceneMap*)m_pScene)->m_action = kAct_Walk;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Walk;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Build)
 				{
 					m_pTextCommand->setString("Build");
-					((SceneMap*)m_pScene)->m_action = kAct_Chop;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Chop;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Mine)
 				{
 					m_pTextCommand->setString("Mine");
-					((SceneMap*)m_pScene)->m_action = kAct_Chop;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Chop;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Harvest)
 				{
 					m_pTextCommand->setString("Harvest");
-					((SceneMap*)m_pScene)->m_action = kAct_Chop;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Chop;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Suicide)
 				{
 					m_pTextCommand->setString("Suicide");
-					((SceneMap*)m_pScene)->m_action = kAct_Die;
-					((SceneMap*)m_pScene)->m_condition = kACond_Default;
+					pUserControl->m_action = kAct_Die;
+					pUserControl->m_condition = kACond_Default;
 				}
 				else if (m_eCommandType == Command_Boost)
 				{
 					m_pTextCommand->setString("Boost");
-					((SceneMap*)m_pScene)->m_action = kAct_Idle;
+					pUserControl->m_action = kAct_Idle;
 				}
 				else if (m_eCommandType == Command_GoToHQWithLumber)
 				{
 					m_pTextCommand->setString("GoToWithLumber");
-					((SceneMap*)m_pScene)->m_action = kAct_Walk;
-					((SceneMap*)m_pScene)->m_condition = kACond_Lumber;
+					pUserControl->m_action = kAct_Walk;
+					pUserControl->m_condition = kACond_Lumber;
 				}
 				else
 				{
